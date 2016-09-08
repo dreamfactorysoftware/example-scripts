@@ -1,5 +1,7 @@
 # This script is for a DF Script Service!
 
+# This script will do a specified math operation on the supplied parameters.
+
 verb = event.request.method;
  
 if verb != 'GET':
@@ -38,3 +40,8 @@ else:
     raise Exception('Invalid or missing resource name.');
  
 return result;
+
+# To Test:
+# From any REST client, make the request GET /api/v2/math/add?n1=4&n2=5 and you should get back the result of 9.
+# A simple REST client can be found at <your_instance_url>/test_rest.html. Remember, if you are not an admin
+# user, your user role must allow access to the scripting service. 
