@@ -4,7 +4,7 @@
 payload = event.request.payload
 
 if(payload):
-    if 'first_name' not in record:
+    if 'first_name' not in payload:
         raise ValueError('First name field missing')
     if payload.first_name == '':
         raise ValueError("First name field required")
