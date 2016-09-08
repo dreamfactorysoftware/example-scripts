@@ -5,7 +5,7 @@
 #  To allow modification of response content, select checkbox in scripting tab of admin console.
 
 # use 'content' for response
-content = event.response.content;
+content = event.response.content
 
 # For this change to take effect you have to enable modification of response in admin console script editor.
 # Checkbox label is 'Allow script to modify request (pre-process) or response (post-process)'.

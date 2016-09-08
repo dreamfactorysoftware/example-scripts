@@ -5,22 +5,22 @@
 # modification of response in the Admin Console script editor. Check the 
 #box 'Allow script to modify request (pre-process) or response (post-process)'. 
 
-content = event.response.content;
+content = event.response.content
  
 if content.resource != "":
-    records = content.resource;
+    records = content.resource
     for (i, record) in enumerate(records):
         # filter by email
-        filter = "filter=" + "email=" + record.email;
+        filter = "filter=" + "email=" + record.email
  
         # get matching record from MongoDB service
-        result = platform.api.get('/mongodb/_table/contact?'+filter);
+        result = platform.api.get('/mongodb/_table/contact?'+filter)
         # convert json string -> dict -> bunch
-        data = bunchify(json.loads(result.read()));
+        data = bunchify(json.loads(result.read()))
  
         # from_mongo_twitter can be a field in MySQL schema, but it doesn't have to be 
-        record.from_mongo_twitter = data.resource[0].twitter.encode('utf-8');
-        records[i] = record;
+        record.from_mongo_twitter = data.resource[0].twitter.encode('utf-8')
+        records[i] = record
  
  
-event.response.content = records;
+event.response.content = records

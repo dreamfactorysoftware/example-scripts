@@ -3,14 +3,14 @@
 
 # This script uses a pre-configured push notification service to send notifications when new records are created. 
  
-payload = event.request.payload;
+payload = event.request.payload
  
 if payload.resource != "":
     for record in payload.resource:
-        msg = '{"Message":"A new Todo named '+record.name+' was just created!", "Subject":"New Todo Created"}';
+        msg = '{"Message":"A new Todo named '+record.name+' was just created!", "Subject":"New Todo Created"}'
  
         # service name is 'push', push to SNS topic by name
-        result = platform.api.post('/push/topic/arn:aws:sns:us-east-1:xxxxxxx:new_todo', msg);
+        result = platform.api.post('/push/topic/arn:aws:sns:us-east-1:xxxxxxx:new_todo', msg)
  
         # output result to storage/logs/dreamfactory.log
-        print result.read();
+        print result.read()
