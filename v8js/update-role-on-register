@@ -1,0 +1,22 @@
+//user > user.register > [POST] user.register > user.register.post.post_process
+
+var role_id = event.request.parameters.role_id;
+
+//User was created and role_id included in request body
+if (event.response.content.success && role_id && role_id === "3"){
+    //find the newly created user and fetch the role details
+    var filter = encodeURIComponent("email='" + event.request.payload.email + "'");
+    var newUserResult = platform.api.get('system/user?related=user_to_app_to_role_by_user_id&fields=id&filter='+ filter);
+    var user_id = newUserResult.content.resource[0].id;
+    var userInfo = newUserResult.content.resource[0];
+    
+    //update the role to the role in the request parameter
+    userInfo.user_to_app_to_role_by_user_id.forEach(function(approle) { 
+        approle.role_id = role_id;
+    });
+    
+    var result = platform.api.patch('system/user/' + user_id + '?related=user_to_app_to_role_by_user_id', userInfo);
+    
+    //add the update result to the response
+    event.response.content.result = result;
+}
