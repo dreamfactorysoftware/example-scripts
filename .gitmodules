@@ -1,0 +1,3 @@
+[submodule "php/GniearkSamples"]
+	path = php/GniearkSamples
+	url = https://github.com/gnieark/dreamFactorySamples.git
