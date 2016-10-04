@@ -1,3 +1,6 @@
+// Log each user login event to Logstash.
+// This script can be triggered by each user login API call.
+
 // In the scripts tab, add this script to user -> user.session -> post -> user.session.post.post_process.
 // Make sure you've correctly configured Logstash as a service in the Services tab of the DreamFactory Admin Console.
 

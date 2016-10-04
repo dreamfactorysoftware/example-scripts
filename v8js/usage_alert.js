@@ -1,3 +1,9 @@
+// Seeing a suspicious pattern of data usage?
+// Send a notification email to an admin.
+// Using a 'TransactionHistory' table, count the number of API calls in the last 5 minutes
+// and send an email alert to the specified email address if the number of API calls exceeds a specific threshold,
+// say 1,000 API calls. This script could be triggered by API calls or scheduled to run periodically.
+
 // We need a way to convert js date to mysql date format.
 // That's what the following two functions do.
 

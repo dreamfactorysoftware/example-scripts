@@ -1,3 +1,9 @@
+// You can create any number of scripting services and invoke them from the REST API.
+// In this example, we'll create a simple service named 'math' that accepts two numbers
+// as query parameters and returns the result as JSON.
+// Since the script is a service, you can control access to it using roles.
+// The script has whatever access to the API that is allowed by the role of the user calling the script.
+// If allowed, the script can make additional REST API calls or cURL requests.
 
 var params, required, n1, n2, resource, result;
 
