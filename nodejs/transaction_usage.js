@@ -17,9 +17,8 @@ var payload = {
     timestamp: (new Date()).toString()
 };
 
-var result = platform.api.post("db/_table/TransactionHistory", {"resource": [payload]});
+platform.api.post("db/_table/TransactionHistory", {"resource": [payload]}, '', function(body, response){
 
-if (result.status_code !== 200) {
-
-    throw(JSON.stringify(result.content.error.message));
-}
+    console.log(response.statusCode + " " + response.statusMessage);
+    event.setResponse(JSON.parse(body), response.statusCode, 'applicaton/json');
+});
