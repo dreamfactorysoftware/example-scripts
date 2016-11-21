@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-This is where we detail the specifics about how we would like to see patches, scripting examples or features contributed.
+This is where we detail the specifics about how we would like to see patches, scripting examples or features contributed. We support V8 JavaScript, Node.js, PHP and Python. Happy Scripting!
 
 
 # provide context
