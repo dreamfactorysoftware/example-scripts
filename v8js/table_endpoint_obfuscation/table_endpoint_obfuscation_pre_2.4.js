@@ -20,7 +20,7 @@ if (Object.keys(parameters).length > 0) { //checks to see if the parameters obje
     }
 }
 
-switch (method) {
+switch (method) { //Cases used to determine which verb to use when making our api call
     case 'GET':
         result = platform.api.get(api_path, payload);
         break;
@@ -41,4 +41,4 @@ switch (method) {
         break;
 }
 
-return result;
+return result; //return the data response to the client

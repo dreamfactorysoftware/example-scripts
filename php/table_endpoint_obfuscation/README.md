@@ -10,4 +10,4 @@ Paste the script into the script editor and change api_path variable to be whate
 Save the service. It is now available using the standard DreamFactory table record API procedures, except the endpoint is shortened.
 See http://wiki.dreamfactory.com/DreamFactory/Features/Database#Table_Records_.28_table.29 for details on Table Record operations.
 
-Also available for PHP. `../../php/table_endpoint_obfuscation`
+Also available for v8js. `../../v8js/table_endpoint_obfuscation`
